@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AIPL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Landing Page -->
+  <div id="landing-page" class="landing-container">
+    <img
+      src="https://aiplabronigeria.com/wp-content/uploads/2023/08/AIPL-ABRO-INDUSTRIES-LTD-LOGO-1.png"
+      alt="AIPL ABRO Nigeria Logo"
+      class="logo"
+    />
+    <button onclick="showRollCalculator()">Open Length Calculator</button>
+    <button onclick="showSqmCalculator()">Open Sq-Meter Calculator</button>
+    <button onclick="window.location.href='https://aiplabronigeria.com/'">
+      Visit Official Website
+    </button>
+  </div>
+
+  <!-- Length Calculator Section -->
+  <div id="calculator-section" class="calculator-container" style="display:none">
+    <img
+      src="https://aiplabronigeria.com/wp-content/uploads/2023/08/AIPL-ABRO-INDUSTRIES-LTD-LOGO-1.png"
+      alt="AIPL ABRO Nigeria Logo"
+      class="logo"
+    />
+    <h2>Length Calculator</h2>
+    <form id="rollCalculator">
+      <!-- Material Type Dropdown -->
+      <label for="materialType">Material Type:</label>
+      <select id="materialType">
+        <option value="filmic">Filmic Tapes (BOPP, Polyester, Etc)</option>
+        <option value="paper">Other Tapes (Masking, Duct, etc)</option>
+      </select>
+
+      <!-- Core Diameter with extra options -->
+      <label for="coreDiameter">Paper Core Diameter (mm):</label>
+      <select id="coreDiameter">
+        <option value="38">38 mm</option>
+        <option value="50">50 mm</option>
+        <option value="76" selected>76 mm</option>
+      </select>
+
+      <label for="coreThickness">Paper Core Thickness (mm):</label>
+      <input type="number" id="coreThickness" step="0.1" value="4.2" required />
+
+      <label for="tapeThickness">Tape Thickness (micron):</label>
+      <input type="number" id="tapeThickness" value="40" required />
+
+      <!-- Roll Diameter Slider + Display -->
+      <div class="slider-row">
+        <label>Roll Diameter (mm): <span id="rollDiameterValue">150 mm</span></label>
+        <div class="slider-container">
+          <button type="button" class="adjust-btn" id="decreaseDiameter">⬇</button>
+          <input
+            type="range"
+            id="rollDiameterSlider"
+            min="75"
+            max="450"
+            step="1"
+            value="150"
+          />
+          <button type="button" class="adjust-btn" id="increaseDiameter">⬆</button>
+        </div>
+      </div>
+
+      <!-- Length of Material Display -->
+      <div class="slider-row">
+        <label>
+          Length of Material (m):
+          <span id="lengthRange">0.0 m</span>
+        </label>
+      </div>
+    </form>
+    <button id="back-btn" onclick="showLandingPage()">Back to Landing Page</button>
+  </div>
+
+  <!-- Sq-Meter Calculator Section -->
+  <div id="sqm-calculator-section" class="calculator-container" style="display:none">
+    <img
+      src="https://aiplabronigeria.com/wp-content/uploads/2023/08/AIPL-ABRO-INDUSTRIES-LTD-LOGO-1.png"
+      alt="AIPL ABRO Nigeria Logo"
+      class="logo"
+    />
+    <h2>Sq-Meter Calculator</h2>
+    <form id="sqmCalculator">
+      <label for="rollWidth">Roll Width (mm):</label>
+      <input type="number" id="rollWidth" placeholder="Enter Roll Width in mm" required />
+
+      <label for="rollLength">Roll Length (m):</label>
+      <input type="number" id="rollLength" placeholder="Enter Roll Length in meters" required />
+
+      <div class="result">
+        <label>Sq-Meter:</label>
+        <div id="sqmResult" class="result-value">0 Sq-m</div>
+      </div>
+    </form>
+    <button id="back-btn" onclick="showLandingPage()">Back to Landing Page</button>
+  </div>
+
+  <script src="script.js" defer></script>
+  <footer>
+    Made and Deployed by –
+    <span class="signature">Hitesh Parmar</span>
+  </footer>
+</body>
+</html>

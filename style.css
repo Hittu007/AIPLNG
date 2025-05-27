@@ -1,0 +1,171 @@
+/* Base & Layout */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff4e50, #1e90ff);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  color: #050505;
+}
+
+.logo {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.landing-container,
+.calculator-container {
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+/* Headings & Text */
+h2 {
+  color: #333;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 3px; /* Reduce gap under label */
+}
+
+/* Inputs & Buttons */
+input,
+select {
+  width: 100%;
+  padding: 7px 10px;
+  margin: 3px 0 10px 0;  /* Smaller vertical spacing */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  font-size: 1.15em;
+}
+
+button {
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 1.2em;
+  color: #fff;
+  background: linear-gradient(45deg, #ff4e50, #1e90ff);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-position 0.5s ease, transform 0.2s ease;
+  background-size: 200%;
+}
+
+button:hover {
+  background-position: right;
+  transform: scale(1.05);
+}
+
+#back-btn {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #1e90ff, #ff4e50);
+  padding: 12px 20px;
+  font-size: 1em;
+}
+
+#back-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Slider Rows */
+.slider-row {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Sliders & Adjust Buttons */
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.adjust-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-size: 1.5em;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.adjust-btn:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
+
+/* Unified Result Styling */
+.slider-row span {
+  color: #2575fc;
+  font-weight: bold;
+  font-size: 1.6em;
+  display: block;
+  margin-top: 8px;
+}
+
+/* Footer Signature */
+footer {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.signature {
+  font-family: 'Freestyle Script', cursive;
+  font-size: 1.5em;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .calculator-container {
+    padding: 12px;
+    max-width: 98%;
+  }
+
+  input,
+  select,
+  button {
+    padding: 9px;
+    font-size: 1.08em;
+  }
+
+  .adjust-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+  }
+
+  .slider-row span {
+    font-size: 1.35em;
+  }
+}
